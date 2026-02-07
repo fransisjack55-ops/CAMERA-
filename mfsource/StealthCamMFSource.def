@@ -1,0 +1,14 @@
+// DLL Export Definitions for StealthCamMFSource
+
+#ifdef EXPORTING
+#define DLL_API __declspec(dllexport)
+#else
+#define DLL_API __declspec(dllimport)
+#endif
+
+extern "C" {
+    DLL_API void Initialize();
+    DLL_API void Shutdown();
+    DLL_API void StartCapture();
+    DLL_API void StopCapture();
+}
